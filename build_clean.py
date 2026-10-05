@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+﻿import os
+
+html_code = """<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -453,4 +455,9 @@
 
   <script src="app.js"></script>
 </body>
-</html>
+</html>"""
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_code)
+
+print("Clean index.html updated successfully!")

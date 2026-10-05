@@ -1,4 +1,143 @@
-// PATY TENIS CLUB - SCRIPT OFICIAL
+﻿import os
+
+# 1. Update style.css with compact spacing and hover dismantle classes
+with open("style.css", "r", encoding="utf-8") as f:
+    css_text = f.read()
+
+# Append interactive hero styles
+extra_css = """
+/* Interactive Dismantle Sneaker on Hero */
+.hero-card-interactive {
+  position: relative;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(22, 27, 40, 0.8), rgba(11, 14, 20, 0.95));
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  padding: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 30px rgba(0, 240, 255, 0.12);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.hero-card-interactive:hover,
+.hero-card-interactive.dismantled {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.7), 0 0 35px rgba(0, 240, 255, 0.25);
+}
+
+.sneaker-layers-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #090b10;
+}
+
+.sneaker-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sneaker-assembled {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.sneaker-dismantled {
+  opacity: 0;
+  transform: scale(0.96);
+  z-index: 2;
+}
+
+/* Hover State / Dismantled State */
+.hero-card-interactive:hover .sneaker-assembled,
+.hero-card-interactive.dismantled .sneaker-assembled {
+  opacity: 0;
+  transform: scale(1.04);
+}
+
+.hero-card-interactive:hover .sneaker-dismantled,
+.hero-card-interactive.dismantled .sneaker-dismantled {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.dismantled-tags-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.hero-card-interactive:hover .dismantled-tags-overlay,
+.hero-card-interactive.dismantled .dismantled-tags-overlay {
+  opacity: 1;
+}
+
+.part-tag {
+  position: absolute;
+  background: rgba(11, 14, 20, 0.92);
+  border: 1px solid var(--accent-cyan);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.tag-laces { top: 12%; left: 32%; }
+.tag-upper { top: 35%; left: 16%; }
+.tag-insole { top: 48%; left: 45%; }
+.tag-shank { top: 58%; left: 52%; }
+.tag-air { top: 68%; left: 62%; border-color: #00ff9d; color: #00ff9d; }
+.tag-outsole { bottom: 12%; left: 35%; }
+
+.hover-instruction-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 5;
+  background: rgba(7, 9, 14, 0.92);
+  border: 1px solid var(--accent-cyan);
+  padding: 5px 12px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  letter-spacing: 0.04em;
+  transition: all 0.3s;
+}
+
+.hero-card-interactive:hover .hover-instruction-badge,
+.hero-card-interactive.dismantled .hover-instruction-badge {
+  background: rgba(0, 240, 255, 0.2);
+  border-color: #fff;
+  color: #fff;
+}
+"""
+
+if ".hero-card-interactive" not in css_text:
+    with open("style.css", "a", encoding="utf-8") as f:
+        f.write("\n" + extra_css)
+    print("style.css updated with hero hover styles.")
+else:
+    print("style.css already has hero hover styles.")
+
+# 2. Update app.js with R$ 320 prices and interactive hover handler
+js_code = """// PATY TENIS CLUB - SCRIPT OFICIAL
 
 // 1. Catálogo com valor oficial de R$ 320,00 por par
 const catalogData = [
@@ -122,3 +261,9 @@ faqItems.forEach(item => {
 });
 
 console.log("Paty Tênis Club interativo carregado com sucesso.");
+"""
+
+with open("app.js", "w", encoding="utf-8") as f:
+    f.write(js_code)
+
+print("Generated clean app.js successfully!")
