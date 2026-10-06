@@ -37,7 +37,7 @@
       <nav class="nav-links">
         <a href="#como-funciona">Regras do Clube</a>
         <a href="#box">O Box</a>
-        <a href="#catalogo">Catálogo e Escolha</a>
+        <a href="#catalogo">Catálogo e Fotos</a>
         <a href="#planos">Assinatura</a>
         <a href="#termos">Termos e Aceite</a>
         <a href="#faq">Dúvidas</a>
@@ -52,7 +52,7 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section com Carrossel de 3 Tênis Interativos que Desmontam no Hover -->
   <section class="hero-section" id="inicio">
     <div class="container hero-grid">
       <div class="hero-content">
@@ -66,16 +66,16 @@
         </h1>
         
         <p class="hero-subtitle">
-          Você escolhe no mínimo <strong>12 modelos favoritos</strong> em nosso catálogo oficial e nós enviamos <strong>4 pares ao longo do ano</strong> direto para o seu endereço, de acordo com o estoque. Entrega programada e garantida.
+          Você escolhe no mínimo <strong>12 modelos favoritos</strong> com fotos reais em nosso catálogo e nós enviamos <strong>4 pares ao longo do ano</strong> direto para sua residência de acordo com o estoque.
         </p>
 
         <div class="hero-cta-group">
           <a href="#catalogo" class="btn btn-primary btn-lg btn-glow">
-            <span>Montar Minha Lista de 12 Tênis</span>
+            <span>Ver Fotos e Montar Minha Lista</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="#como-funciona" class="btn btn-outline btn-lg">
-            <span>Entenda as Regras</span>
+            <span>Como Funciona o Envio</span>
           </a>
         </div>
 
@@ -97,44 +97,92 @@
         </div>
       </div>
 
-      <!-- Container Interativo com Tênis do Catálogo que Desmonta no Hover -->
+      <!-- Carrossel de 3 Tênis do Catálogo (Mudam com o tempo e desmontam no hover) -->
       <div class="hero-visual">
         <div class="hero-card-interactive" id="heroInteractiveSneaker">
-          <div class="floating-badge badge-top-right">
-            <span class="dot-green"></span> MODELO DO CATÁLOGO OFICIAL
+          <!-- Top Badge Dinâmica -->
+          <div class="floating-badge badge-top-right" id="carouselBadge">
+            <span class="dot-green"></span> 1/3 NIKE AIR SERIES // CATÁLOGO OFICIAL
           </div>
-          
-          <div class="sneaker-layers-wrapper">
-            <img src="assets/sneaker-assembled.jpg" alt="Tênis do Catálogo Paty Tênis" class="sneaker-layer sneaker-assembled">
-            <img src="assets/exploded-view.jpg" alt="Tênis Desmontado em Camadas" class="sneaker-layer sneaker-dismantled">
-            
-            <div class="dismantled-tags-overlay">
-              <span class="part-tag tag-laces">Cadarços e Língua</span>
-              <span class="part-tag tag-upper">Cabedal em Couro</span>
-              <span class="part-tag tag-insole">Palmilha Anatômica</span>
-              <span class="part-tag tag-shank">Carbon Shank</span>
-              <span class="part-tag tag-air">Câmara de Ar</span>
-              <span class="part-tag tag-outsole">Solado de Borracha</span>
+
+          <!-- Carousel Controls: Setas e Dots -->
+          <button class="carousel-nav-btn prev-btn" id="prevSlideBtn" title="Modelo Anterior">&#10094;</button>
+          <button class="carousel-nav-btn next-btn" id="nextSlideBtn" title="Próximo Modelo">&#10095;</button>
+
+          <!-- Slide 1: Nike Air Series -->
+          <div class="carousel-slide active" id="slide-0" data-model="Nike Air Series" data-badge="1/3 NIKE AIR SERIES // CATÁLOGO OFICIAL" data-style="Streets & Lifestyle">
+            <div class="sneaker-layers-wrapper">
+              <img src="assets/sneaker-assembled.jpg" alt="Nike Air do Catálogo" class="sneaker-layer sneaker-assembled">
+              <img src="assets/exploded-view.jpg" alt="Nike Air Desmontado" class="sneaker-layer sneaker-dismantled">
+              <div class="dismantled-tags-overlay">
+                <span class="part-tag tag-laces">Cadarços e Língua</span>
+                <span class="part-tag tag-upper">Cabedal em Couro</span>
+                <span class="part-tag tag-insole">Palmilha Anatômica</span>
+                <span class="part-tag tag-shank">Carbon Shank</span>
+                <span class="part-tag tag-air">Câmara de Ar</span>
+                <span class="part-tag tag-outsole">Solado de Borracha</span>
+              </div>
             </div>
           </div>
 
+          <!-- Slide 2: Adidas Samba Classic -->
+          <div class="carousel-slide" id="slide-1" data-model="Adidas Samba Classic" data-badge="2/3 ADIDAS SAMBA // RETRÔ CASUAL" data-style="Clássico Retrô & Streets">
+            <div class="sneaker-layers-wrapper">
+              <img src="assets/samba-assembled.jpg" alt="Adidas Samba do Catálogo" class="sneaker-layer sneaker-assembled">
+              <img src="assets/samba-exploded.jpg" alt="Adidas Samba Desmontado" class="sneaker-layer sneaker-dismantled">
+              <div class="dismantled-tags-overlay">
+                <span class="part-tag tag-laces">Cadarços de Algodão</span>
+                <span class="part-tag tag-upper">Couro & Biqueira Suede</span>
+                <span class="part-tag tag-insole">Palmilha Anatômica</span>
+                <span class="part-tag tag-shank">Entressola Flexível</span>
+                <span class="part-tag tag-air">Amortecimento Clássico</span>
+                <span class="part-tag tag-outsole">Solado Gum de Borracha</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Adidas Ultraboost -->
+          <div class="carousel-slide" id="slide-2" data-model="Adidas Ultraboost" data-badge="3/3 ADIDAS ULTRABOOST // ALTA PERFORMANCE" data-style="Corrida & Conforto Extremo">
+            <div class="sneaker-layers-wrapper">
+              <img src="assets/boost-assembled.jpg" alt="Adidas Ultraboost do Catálogo" class="sneaker-layer sneaker-assembled">
+              <img src="assets/boost-exploded.jpg" alt="Adidas Ultraboost Desmontado" class="sneaker-layer sneaker-dismantled">
+              <div class="dismantled-tags-overlay">
+                <span class="part-tag tag-laces">Gaiola TPU & Cadarços</span>
+                <span class="part-tag tag-upper">Cabedal Primeknit Sock</span>
+                <span class="part-tag tag-insole">Palmilha Respirável</span>
+                <span class="part-tag tag-shank">Torsion System</span>
+                <span class="part-tag tag-air">Cápsulas Boost Energy</span>
+                <span class="part-tag tag-outsole">Solado Continental Grip</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Indicadores de Slides (Dots) -->
+          <div class="carousel-dots-container">
+            <button class="carousel-dot active" data-index="0" title="Nike Air"></button>
+            <button class="carousel-dot" data-index="1" title="Adidas Samba"></button>
+            <button class="carousel-dot" data-index="2" title="Adidas Ultraboost"></button>
+          </div>
+
+          <!-- Badge de Instrução de Hover -->
           <div class="hover-instruction-badge" id="hoverBadge">
             <span class="hover-icon">👆</span>
             <span class="hover-text" id="hoverText">PASSE O MOUSE PARA DESMONTAR O TÊNIS</span>
           </div>
 
+          <!-- HUD Dinâmico do Modelo Atual -->
           <div class="floating-hud badge-bottom-left">
-            <div class="hud-header">STATUS DO PRODUTO</div>
-            <div class="hud-row"><span>Catálogo:</span> <strong>Disponível na Seleção</strong></div>
+            <div class="hud-header">MODELO ATUAL DO CARROSSEL</div>
+            <div class="hud-row"><span>Tênis:</span> <strong id="hudModel">Nike Air Series</strong></div>
             <div class="hud-row"><span>Estrutura:</span> <strong id="hudStructure">Original Montado</strong></div>
-            <div class="hud-row"><span>Envio:</span> <strong>Integrado ao Plano Anual</strong></div>
+            <div class="hud-row"><span>Estilo:</span> <strong id="hudStyle">Streets & Lifestyle</strong></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Regras Claras do Clube (Passo a Passo de Seleção e Envio) -->
+  <!-- Regras Claras do Clube -->
   <section class="timeline-section" id="como-funciona">
     <div class="container">
       <div class="section-header text-center">
@@ -149,7 +197,7 @@
         <div class="rule-box glass-panel">
           <div class="rule-icon-box">📋</div>
           <h3>1. Você Escolhe no Mínimo 12 Modelos</h3>
-          <p>Ao assinar o clube, você monta sua lista de preferências selecionando <strong>no mínimo 12 tênis</strong> do nosso catálogo oficial que você mais gosta.</p>
+          <p>Ao assinar o clube, você monta sua lista de preferências selecionando <strong>no mínimo 12 tênis</strong> com fotos reais em nosso catálogo oficial.</p>
         </div>
 
         <div class="rule-box glass-panel">
@@ -225,21 +273,21 @@
           </div>
 
           <div class="unboxing-cta-row">
-            <a href="#catalogo" class="btn btn-gold btn-lg btn-glow">Montar Minha Lista Agora &rarr;</a>
+            <a href="#catalogo" class="btn btn-gold btn-lg btn-glow">Ver Fotos e Montar Minha Lista &rarr;</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Catalog (Monte sua Lista de 12 Tênis) -->
+  <!-- Interactive Catalog com Fotos dos Tênis -->
   <section class="catalog-section" id="catalogo">
     <div class="container">
       <div class="section-header text-center">
-        <div class="section-tag">MONTE SUA WISHLIST</div>
-        <h2 class="section-title">CATÁLOGO OFICIAL: <span class="text-gradient-cyan">ESCOLHA SEUS 12 FAVORITOS</span></h2>
+        <div class="section-tag">CATÁLOGO VISUAL COM FOTOS</div>
+        <h2 class="section-title">ESCOLHA SEUS <span class="text-gradient-cyan">12 FAVORITOS</span></h2>
         <p class="section-description">
-          Clique nos tênis para adicionar à sua lista de preferências. Você precisa escolher <strong>no mínimo 12 modelos</strong> para compor o seu plano anual.
+          Veja as fotos dos modelos disponíveis em nosso estoque. Clique para adicionar <strong>no mínimo 12 modelos</strong> à sua lista de assinatura.
         </p>
 
         <!-- Floating Wishlist Counter -->
@@ -251,7 +299,7 @@
             </div>
           </div>
           <div class="wishlist-status-msg" id="wishlistMsg">
-            Selecione pelo menos 12 modelos abaixo para habilitar o envio.
+            Selecione pelo menos 12 modelos com fotos abaixo para habilitar o envio.
           </div>
         </div>
 
@@ -264,6 +312,7 @@
         </div>
       </div>
 
+      <!-- Grid com Fotos Reais de Cada Tênis -->
       <div class="catalog-grid" id="catalogGrid"></div>
 
       <div class="catalog-footer-note">
@@ -426,7 +475,7 @@
           <span class="logo-club">CLUB</span>
         </div>
         <p class="footer-text">
-          O clube de assinatura oficial de tênis da Paty Tênis. Escolha seus 12 favoritos e receba 4 pares originais ao longo do ano.
+          O clube de assinatura oficial de tênis da Paty Tênis. Escolha seus 12 favoritos com fotos e receba 4 pares originais ao longo do ano.
         </p>
         <p class="footer-copy">&copy; 2026 PATY TÊNIS CLUB. Todos os direitos reservados. CNPJ 03.809.446/0001-50.</p>
       </div>
@@ -436,7 +485,7 @@
         <ul>
           <li><a href="#como-funciona">Regras do Clube</a></li>
           <li><a href="#box">O Box</a></li>
-          <li><a href="#catalogo">Catálogo de Escolha</a></li>
+          <li><a href="#catalogo">Catálogo com Fotos</a></li>
           <li><a href="#planos">Assinatura</a></li>
           <li><a href="#termos">Termos e Condições</a></li>
         </ul>

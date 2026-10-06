@@ -1,28 +1,27 @@
 // PATY TENIS CLUB - SCRIPT OFICIAL
 
-// 1. Catálogo Oficial (Sem preços individuais, foco na seleção para a Wishlist)
+// 1. Catálogo Oficial com Fotos e Dados do Estoque
 const catalogData = [
-  { id: 1, brand: "ADIDAS", model: "Samba", category: "Clássicos / Streets / Academia", sizes: "35 a 45", type: "Streets" },
-  { id: 2, brand: "ADIDAS", model: "Superstar", category: "Clássicos / Streets / Academia", sizes: "35 a 45", type: "Streets" },
-  { id: 3, brand: "ADIDAS", model: "Gazelle", category: "Clássicos / Streets / Academia", sizes: "35 a 45", type: "Streets" },
-  { id: 4, brand: "ADIDAS", model: "Campus", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets" },
-  { id: 5, brand: "ADIDAS", model: "Forum", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets" },
-  { id: 6, brand: "ADIDAS", model: "Stan Smith", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets" },
-  { id: 7, brand: "ADIDAS", model: "Ozweego", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets" },
-  { id: 8, brand: "ADIDAS", model: "NMD", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets" },
-  { id: 9, brand: "ADIDAS", model: "Ultraboost", category: "Corrida / Treino / Conforto Extremo", sizes: "35 a 45", type: "Corrida" },
-  { id: 10, brand: "ADIDAS", model: "Adizero", category: "Corrida / Treino / Alta Performance", sizes: "35 a 45", type: "Corrida" },
-  { id: 11, brand: "ADIDAS", model: "Supernova", category: "Corrida / Treino / Conforto Diário", sizes: "35 a 45", type: "Corrida" },
-  { id: 12, brand: "ADIDAS", model: "Adistar", category: "Corrida / Treino / Longas Distâncias", sizes: "35 a 45", type: "Corrida" },
-  { id: 13, brand: "NIKE", model: "Air Force 1", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets" },
-  { id: 14, brand: "NIKE", model: "Dunk Low", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets" },
-  { id: 15, brand: "NIKE", model: "Air Max 90", category: "AIR MAX / Streets / Estilo", sizes: "35 a 45", type: "Streets" },
-  { id: 16, brand: "NIKE", model: "Air Max 95", category: "AIR MAX / Streets / Conforto", sizes: "35 a 45", type: "Streets" },
-  { id: 17, brand: "NIKE", model: "Air Max 97", category: "AIR MAX / Streets / Futurista", sizes: "35 a 45", type: "Streets" },
-  { id: 18, brand: "NIKE", model: "Pegasus", category: "Corrida / Treino / Amortecimento Rápido", sizes: "35 a 45", type: "Corrida" }
+  { id: 1, brand: "ADIDAS", model: "Samba Classic", category: "Clássicos / Streets / Academia", sizes: "35 a 45", type: "Streets", image: "assets/samba-assembled.jpg" },
+  { id: 2, brand: "ADIDAS", model: "Superstar", category: "Clássicos / Streets / Academia", sizes: "35 a 45", type: "Streets", image: "assets/samba-assembled.jpg" },
+  { id: 3, brand: "ADIDAS", model: "Gazelle Retrô", category: "Clássicos / Streets / Academia", sizes: "35 a 45", type: "Streets", image: "assets/samba-assembled.jpg" },
+  { id: 4, brand: "ADIDAS", model: "Campus", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets", image: "assets/samba-assembled.jpg" },
+  { id: 5, brand: "ADIDAS", model: "Forum", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets", image: "assets/samba-assembled.jpg" },
+  { id: 6, brand: "ADIDAS", model: "Stan Smith", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets", image: "assets/samba-assembled.jpg" },
+  { id: 7, brand: "ADIDAS", model: "Ozweego", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets", image: "assets/samba-assembled.jpg" },
+  { id: 8, brand: "ADIDAS", model: "NMD R1", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets", image: "assets/samba-assembled.jpg" },
+  { id: 9, brand: "ADIDAS", model: "Ultraboost", category: "Corrida / Treino / Conforto Extremo", sizes: "35 a 45", type: "Corrida", image: "assets/boost-assembled.jpg" },
+  { id: 10, brand: "ADIDAS", model: "Adizero Pro", category: "Corrida / Treino / Alta Performance", sizes: "35 a 45", type: "Corrida", image: "assets/boost-assembled.jpg" },
+  { id: 11, brand: "ADIDAS", model: "Supernova", category: "Corrida / Treino / Conforto Diário", sizes: "35 a 45", type: "Corrida", image: "assets/boost-assembled.jpg" },
+  { id: 12, brand: "ADIDAS", model: "Adistar", category: "Corrida / Treino / Longas Distâncias", sizes: "35 a 45", type: "Corrida", image: "assets/boost-assembled.jpg" },
+  { id: 13, brand: "NIKE", model: "Air Force 1", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets", image: "assets/sneaker-assembled.jpg" },
+  { id: 14, brand: "NIKE", model: "Dunk Low Panda", category: "Clássicos / Streets / Dia a dia", sizes: "35 a 45", type: "Streets", image: "assets/dunk-assembled.jpg" },
+  { id: 15, brand: "NIKE", model: "Air Max 90", category: "AIR MAX / Streets / Estilo", sizes: "35 a 45", type: "Streets", image: "assets/sneaker-assembled.jpg" },
+  { id: 16, brand: "NIKE", model: "Air Max 95", category: "AIR MAX / Streets / Conforto", sizes: "35 a 45", type: "Streets", image: "assets/sneaker-assembled.jpg" },
+  { id: 17, brand: "NIKE", model: "Air Max 97", category: "AIR MAX / Streets / Futurista", sizes: "35 a 45", type: "Streets", image: "assets/sneaker-assembled.jpg" },
+  { id: 18, brand: "NIKE", model: "Pegasus Running", category: "Corrida / Treino / Amortecimento Rápido", sizes: "35 a 45", type: "Corrida", image: "assets/boost-assembled.jpg" }
 ];
 
-// Wishlist do Usuário (IDs dos modelos selecionados)
 let selectedWishlist = new Set();
 
 const catalogGrid = document.getElementById('catalogGrid');
@@ -37,7 +36,7 @@ function updateWishlistCounter() {
   if (count >= 12) {
     if (wishlistStatusCard) wishlistStatusCard.classList.add('ready');
     if (wishlistMsg) {
-      wishlistMsg.innerHTML = `<span style="color: var(--accent-green); font-weight: 700;">✓ Perfeito! Você selecionou ${count} modelos.</span> Seus 4 pares do ano sairão exclusivamente desta sua lista!`;
+      wishlistMsg.innerHTML = `<span style="color: var(--accent-green); font-weight: 700;">✓ Perfeito! Você selecionou ${count} modelos com fotos.</span> Seus 4 pares do ano sairão exclusivamente desta sua lista!`;
     }
   } else {
     if (wishlistStatusCard) wishlistStatusCard.classList.remove('ready');
@@ -54,13 +53,16 @@ function renderCatalog(items) {
     const isSelected = selectedWishlist.has(item.id);
     return `
       <div class="sneaker-card ${isSelected ? 'selected' : ''}" id="card-${item.id}">
+        <div class="sneaker-card-image">
+          <img src="${item.image}" alt="${item.brand} ${item.model}" loading="lazy">
+        </div>
         <div>
           <span class="card-brand-badge">${item.brand}</span>
           <h4 class="card-title">${item.brand} ${item.model}</h4>
           <p class="card-category">${item.category}</p>
           <div class="card-sizes">
             <span class="size-pill available">Grade ${item.sizes}</span>
-            <span class="size-pill available">Catálogo Oficial</span>
+            <span class="size-pill available">Em Estoque</span>
           </div>
         </div>
         <div class="card-footer">
@@ -85,7 +87,6 @@ window.toggleWishlist = function(id) {
   }
   updateWishlistCounter();
   
-  // Atualiza apenas os botões e bordas sem recarregar o grid inteiro
   const card = document.getElementById(`card-${id}`);
   if (card) {
     const btn = card.querySelector('.btn-card-select');
@@ -105,7 +106,6 @@ window.toggleWishlist = function(id) {
   }
 };
 
-// Render inicial
 renderCatalog(catalogData);
 updateWishlistCounter();
 
@@ -129,13 +129,86 @@ filterBtns.forEach(btn => {
   });
 });
 
-// 3. Efeito Interativo no Tênis do Hero: Desmontar no Hover
-const heroSneakerCard = document.getElementById('heroInteractiveSneaker');
-const hoverText = document.getElementById('hoverText');
+// 3. Carrossel de 3 Tênis no Hero com Efeito Desmontar no Hover
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.carousel-dot');
+const carouselBadge = document.getElementById('carouselBadge');
+const hudModel = document.getElementById('hudModel');
 const hudStructure = document.getElementById('hudStructure');
+const hudStyle = document.getElementById('hudStyle');
+const hoverText = document.getElementById('hoverText');
+const heroCard = document.getElementById('heroInteractiveSneaker');
 
-if (heroSneakerCard) {
-  heroSneakerCard.addEventListener('mouseenter', () => {
+function goToSlide(index) {
+  slides.forEach((s, idx) => {
+    s.classList.toggle('active', idx === index);
+  });
+  dots.forEach((d, idx) => {
+    d.classList.toggle('active', idx === index);
+  });
+  currentSlideIndex = index;
+
+  const activeSlide = slides[index];
+  if (activeSlide) {
+    if (carouselBadge) carouselBadge.innerHTML = `<span class="dot-green"></span> ${activeSlide.getAttribute('data-badge')}`;
+    if (hudModel) hudModel.textContent = activeSlide.getAttribute('data-model');
+    if (hudStyle) hudStyle.textContent = activeSlide.getAttribute('data-style');
+    if (hudStructure) {
+      hudStructure.textContent = heroCard && heroCard.classList.contains('dismantled') ? "Desmontado (Raio-X)" : "Original Montado";
+    }
+  }
+}
+
+// Rotação Automática do Carrossel a cada 4.5 segundos
+let carouselTimer = setInterval(() => {
+  let next = (currentSlideIndex + 1) % slides.length;
+  goToSlide(next);
+}, 4500);
+
+function resetCarouselTimer() {
+  clearInterval(carouselTimer);
+  carouselTimer = setInterval(() => {
+    let next = (currentSlideIndex + 1) % slides.length;
+    goToSlide(next);
+  }, 4500);
+}
+
+// Botões Próximo e Anterior
+const prevBtn = document.getElementById('prevSlideBtn');
+const nextBtn = document.getElementById('nextSlideBtn');
+
+if (prevBtn) {
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let prev = (currentSlideIndex - 1 + slides.length) % slides.length;
+    goToSlide(prev);
+    resetCarouselTimer();
+  });
+}
+
+if (nextBtn) {
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let next = (currentSlideIndex + 1) % slides.length;
+    goToSlide(next);
+    resetCarouselTimer();
+  });
+}
+
+// Cliques nos Dots
+dots.forEach((dot, idx) => {
+  dot.addEventListener('click', (e) => {
+    e.stopPropagation();
+    goToSlide(idx);
+    resetCarouselTimer();
+  });
+});
+
+// Interatividade Hover que Desmonta o Modelo Ativo (Pausa o carrossel durante a inspeção)
+if (heroCard) {
+  heroCard.addEventListener('mouseenter', () => {
+    clearInterval(carouselTimer); // Pausa para permitir examinar o tênis
     if (hoverText) hoverText.textContent = "DESMONTADO // ANATOMIA REVELADA";
     if (hudStructure) {
       hudStructure.textContent = "Desmontado (Raio-X)";
@@ -143,17 +216,18 @@ if (heroSneakerCard) {
     }
   });
 
-  heroSneakerCard.addEventListener('mouseleave', () => {
-    heroSneakerCard.classList.remove('dismantled');
+  heroCard.addEventListener('mouseleave', () => {
+    heroCard.classList.remove('dismantled');
     if (hoverText) hoverText.textContent = "PASSE O MOUSE PARA DESMONTAR O TÊNIS";
     if (hudStructure) {
       hudStructure.textContent = "Original Montado";
       hudStructure.style.color = "#fff";
     }
+    resetCarouselTimer(); // Retoma o carrossel
   });
 
-  heroSneakerCard.addEventListener('click', () => {
-    const isDismantled = heroSneakerCard.classList.toggle('dismantled');
+  heroCard.addEventListener('click', () => {
+    const isDismantled = heroCard.classList.toggle('dismantled');
     if (hoverText) {
       hoverText.textContent = isDismantled ? "DESMONTADO // TOQUE PARA MONTAR" : "PASSE O MOUSE PARA DESMONTAR O TÊNIS";
     }
@@ -192,7 +266,6 @@ if (termsCheckbox && btnSubscribeKiwify) {
       return;
     }
     
-    // Alerta caso o cliente não tenha selecionado ao menos 12 modelos
     if (selectedWishlist.size < 12) {
       const confirmContinue = confirm(`Você selecionou ${selectedWishlist.size} de 12 modelos recomendados. Deseja prosseguir para o pagamento e completar sua lista depois no WhatsApp?`);
       if (!confirmContinue) {
@@ -201,7 +274,6 @@ if (termsCheckbox && btnSubscribeKiwify) {
       }
     }
 
-    // Redirecionamento oficial Kiwify
     window.open("https://pay.kiwify.com.br/", "_blank");
   });
 }
@@ -219,4 +291,4 @@ faqItems.forEach(item => {
   });
 });
 
-console.log("Paty Tênis Club - Script de Wishlist e Termos carregado.");
+console.log("Paty Tênis Club - Carrossel de 3 modelos e fotos de catálogo ativos.");

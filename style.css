@@ -1586,3 +1586,95 @@ button:disabled {
 @media (max-width: 768px) {
   .rules-grid { grid-template-columns: 1fr; }
 }
+
+
+/* Hero Carousel Controls & Slides */
+.carousel-slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.carousel-slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10, 14, 22, 0.75);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 15;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s;
+}
+
+.carousel-nav-btn:hover {
+  background: var(--accent-cyan);
+  color: #07080b;
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.prev-btn { left: 14px; }
+.next-btn { right: 14px; }
+
+.carousel-dots-container {
+  position: absolute;
+  bottom: 22px;
+  right: 22px;
+  display: flex;
+  gap: 8px;
+  z-index: 15;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.carousel-dot.active {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
+  transform: scale(1.25);
+}
+
+/* Sneaker Card With Photo in Catalog */
+.sneaker-card-image {
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #080a10;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+.sneaker-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.sneaker-card:hover .sneaker-card-image img {
+  transform: scale(1.08);
+}
