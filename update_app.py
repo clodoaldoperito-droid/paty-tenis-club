@@ -1,4 +1,6 @@
-// PATY TENIS CLUB - SCRIPT OFICIAL
+﻿import os
+
+js_code = """// PATY TENIS CLUB - SCRIPT OFICIAL
 
 // 1. Catálogo Oficial (Sem preços individuais, foco na seleção para a Wishlist)
 const catalogData = [
@@ -220,3 +222,9 @@ faqItems.forEach(item => {
 });
 
 console.log("Paty Tênis Club - Script de Wishlist e Termos carregado.");
+"""
+
+with open("app.js", "w", encoding="utf-8") as f:
+    f.write(js_code)
+
+print("app.js updated successfully with Wishlist selection and Terms logic!")
